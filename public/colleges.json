@@ -1,0 +1,91 @@
+[
+   {
+      "college_name": "University of Northville",
+      "admission_dates": {
+         "fall": "September 1 - 15",
+         "spring": "January 15 - 30",
+         "summer": "April 15 - 30"
+      },
+      "events": [
+         {
+            "event_name": "Orientation Day",
+            "date": "August 25, 2023",
+            "location": "Campus Auditorium",
+            "description": "Join us for a warm welcome to University of Northville. Get to know your fellow students and faculty members."
+         },
+         {
+            "event_name": "Career Fair",
+            "date": "October 12, 2023",
+            "location": "Student Center",
+            "description": "Explore job opportunities and internships from top companies. Open to all students and alumni."
+         },
+         {
+            "event_name": "Annual Sports Fest",
+            "date": "April 5 - 7, 2024",
+            "location": "University Stadium",
+            "description": "Cheer for your favorite sports teams in a thrilling three-day sports extravaganza!"
+         }
+      ],
+      "research_history": {
+         "found_date": "September 10, 1935",
+         "founder": "Professor Alexander Johnson",
+         "notable_discoveries": [
+            "The Johnson Algorithm",
+            "Northville's Law of Physics"
+         ]
+      },
+      "sports": [
+         "Basketball",
+         "Soccer",
+         "Swimming",
+         "Tennis",
+         "Volleyball",
+         "Track and Field"
+      ],
+      "college_image": "https://example.com/university_of_northville.jpg"
+   },
+   {
+      "college_name": "Central State College",
+      "admission_dates": {
+         "fall": "August 15 - 31",
+         "spring": "January 10 - 25",
+         "summer": "May 1 - 15"
+      },
+      "events": [
+         {
+            "event_name": "Welcome Back Bash",
+            "date": "September 2, 2023",
+            "location": "Central Lawn",
+            "description": "Start the semester with a bang! Enjoy live music, food trucks, and games."
+         },
+         {
+            "event_name": "International Food Festival",
+            "date": "November 18, 2023",
+            "location": "Quad Area",
+            "description": "Experience the rich flavors of cultures from around the world. Sample delicious dishes prepared by our diverse student community."
+         },
+         {
+            "event_name": "Annual Science Exhibition",
+            "date": "March 20 - 22, 2024",
+            "location": "Science Building",
+            "description": "Witness groundbreaking research and innovative projects by our talented students and faculty."
+         }
+      ],
+      "research_history": {
+         "found_date": "July 5, 1950",
+         "founder": "Dr. Margaret Parker",
+         "notable_discoveries": [
+            "Parker's Theorem",
+            "Central State's Law of Chemistry"
+         ]
+      },
+      "sports": [
+         "Football",
+         "Baseball",
+         "Hockey",
+         "Badminton",
+         "Golf"
+      ],
+      "college_image": "https://example.com/central_state_college.jpg"
+   }
+]
