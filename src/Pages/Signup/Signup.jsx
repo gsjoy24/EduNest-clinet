@@ -1,29 +1,56 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import signupImg from '../../assets/signup.jpg'
 import SocialAuth from '../../components/SocialAuth/SocialAuth';
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { toast } from 'react-hot-toast';
 const Signup = () => {
-   const { name } = useContext(AuthContext)
-   console.log(name);
+   const { createUser, setLoading, loading, updateUserProfile } = useContext(AuthContext)
+   const navigate = useNavigate();
    // scroll to top automatically
    useEffect(() => {
       window.scrollTo(0, 0)
    }, [])
+
+   const handleSignUp = (event) => {
+      event.preventDefault();
+      const name = event.target.name.value;
+      const photoURL = event.target.photoURL.value;
+      const email = event.target.email.value;
+      const password = event.target.password.value;
+
+      createUser(email, password).then((data) => {
+         console.log(data);
+         if (data?.user) {
+            updateUserProfile(name, photoURL)
+               .then(() => { console.log('name and photo added!') })
+               .catch((err) => { console.log(err) })
+         }
+         setLoading(false);
+         toast.success('successfully logged in!');
+         navigate('/');
+      })
+         .catch((err) => {
+            setLoading(false);
+            console.log(err.message);
+            toast.error(err.message);
+         });
+   }
+
    return (
       <div className='py-12 px-3 flex justify-center items-center gap-8'>
          <div className='max-w-sm hidden md:block'>
             <img className='w-96' src={signupImg} alt="signup" />
          </div>
          {/* sign up form */}
-         <form className='min-w-[300px] md:min-w-[500px]'>
+         <form onSubmit={handleSignUp} className='min-w-[300px] md:min-w-[500px]'>
             <h2 className="uppercase text-2xl font-bold text-center mb-12">sign up now</h2>
             {/* name */}
             <div className="form-control w-full">
                <label className="label">
                   <span className="label-text">What is your name?</span>
                </label>
-               <input type="text" placeholder="Name" className="input input-bordered w-full" />
+               <input type="text" placeholder="Name" name='name' className="input input-bordered w-full" />
             </div>
 
             {/* photo */}
@@ -31,7 +58,7 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">Your photo URL</span>
                </label>
-               <input type="text" placeholder="Photo URL" className="input input-bordered w-full" />
+               <input type="text" placeholder="Photo URL" name='photoURL' className="input input-bordered w-full" />
             </div>
 
             {/* email */}
@@ -39,7 +66,7 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">What is your email?</span>
                </label>
-               <input type="email" placeholder="Email" className="input input-bordered w-full" />
+               <input type="email" placeholder="Email" name='email' className="input input-bordered w-full" />
             </div>
 
             {/* password */}
@@ -47,7 +74,7 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">Create a new password</span>
                </label>
-               <input type="password" placeholder="Password" className="input input-bordered w-full" />
+               <input type="password" placeholder="Password" name='password' className="input input-bordered w-full" />
             </div>
             <button type='submit' className="btn btn-block mt-5">Sign Up</button>
 
