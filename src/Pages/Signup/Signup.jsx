@@ -20,14 +20,13 @@ const Signup = () => {
       const password = event.target.password.value;
 
       createUser(email, password).then((data) => {
-         console.log(data);
          if (data?.user) {
             updateUserProfile(name, photoURL)
                .then(() => { console.log('name and photo added!') })
                .catch((err) => { console.log(err) })
          }
          setLoading(false);
-         toast.success('successfully logged in!');
+         toast.success('successfully signed up!');
          navigate('/');
       })
          .catch((err) => {
@@ -50,7 +49,7 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">What is your name?</span>
                </label>
-               <input type="text" placeholder="Name" name='name' className="input input-bordered w-full" />
+               <input type="text" placeholder="Name" name='name' className="input input-bordered w-full" required />
             </div>
 
             {/* photo */}
@@ -58,7 +57,7 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">Your photo URL</span>
                </label>
-               <input type="text" placeholder="Photo URL" name='photoURL' className="input input-bordered w-full" />
+               <input type="text" placeholder="Photo URL" name='photoURL' className="input input-bordered w-full" required />
             </div>
 
             {/* email */}
@@ -66,7 +65,7 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">What is your email?</span>
                </label>
-               <input type="email" placeholder="Email" name='email' className="input input-bordered w-full" />
+               <input type="email" placeholder="Email" name='email' className="input input-bordered w-full" required />
             </div>
 
             {/* password */}
@@ -74,9 +73,9 @@ const Signup = () => {
                <label className="label">
                   <span className="label-text">Create a new password</span>
                </label>
-               <input type="password" placeholder="Password" name='password' className="input input-bordered w-full" />
+               <input type="password" placeholder="Password" name='password' className="input input-bordered w-full" autoComplete='true' required />
             </div>
-            <button type='submit' className="btn btn-block mt-5">Sign Up</button>
+            <button type={loading ? 'button' : 'submit'} className="btn btn-block mt-5">{loading ? 'Please wait!' : 'Sign Up'}</button>
 
             <div className='text-sm py-3 text-center'>
                Already have an account? <Link className='text-green-600' to='/login'>Login Now</Link>

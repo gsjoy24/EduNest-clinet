@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Navbar = () => {
+   const { user, logOutUser } = useContext(AuthContext)
+   const handleLogOut = () => {
+      logOutUser()
+         .then(() => console.log('logged out'))
+         .then((err) => console.log(err.message))
+   }
 
    const navItems =
       <>
          <li> <NavLink to='/'>Home</NavLink></li>
          <li> <NavLink to='/colleges'>Colleges</NavLink></li>
          <li> <NavLink to='/admission'>Admission</NavLink></li>
-         <li> <NavLink to='/my-college'>My College</NavLink></li>
-         <li> <NavLink to='/signup'>Sign Up</NavLink></li>
-         <li> <NavLink to='/login'>Login</NavLink></li>
+         {user?.email && <li> <NavLink to='/my-college'>My College</NavLink></li>}
+         {!user?.email ?
+            <>
+               <li> <NavLink to='/signup'>Sign Up</NavLink></li>
+               <li><NavLink to='/login'>Login</NavLink></li></>
+            :
+            <li onClick={handleLogOut}><button className='p-2 bg-slate-100 rounded-md cursor-pointer focus:scale-90'>Log out</button></li>}
       </>
 
    return (
@@ -26,8 +37,8 @@ const Navbar = () => {
             </div>
             <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">EduNEST</Link>
          </div>
-         <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 space-x-3">
+         <div className="navbar-center hidden lg:flex items-center">
+            <ul className="menu menu-horizontal px-1 space-x-2">
                {navItems}
             </ul>
          </div>
