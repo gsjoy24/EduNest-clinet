@@ -8,10 +8,12 @@ import {
    GithubAuthProvider,
    signInWithPopup,
    signInWithEmailAndPassword,
-   signOut
+   signOut,
+   sendPasswordResetEmail
 } from 'firebase/auth';
 
 import { app } from '../Firebase/firebase.config';
+import axios from 'axios';
 
 const auth = getAuth(app);
 export const AuthContext = createContext(null);
@@ -21,6 +23,7 @@ const gitHubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
    const [user, setUser] = useState(null);
    const [loading, setLoading] = useState(true);
+   const [colleges, setColleges] = useState([]);
 
    // create a new user
    const createUser = (email, password) => {
@@ -51,6 +54,11 @@ const AuthProvider = ({ children }) => {
       return signOut(auth);
    };
 
+   // logout the user
+   const resetPass = (email) => {
+      return sendPasswordResetEmail(auth, email);
+   };
+
    // update the user profile with name and photo
    const updateUserProfile = (name, photo) => {
       setLoading(true);
@@ -72,6 +80,20 @@ const AuthProvider = ({ children }) => {
       };
    }, []);
 
+   useEffect(() => {
+      const fetchColleges = async () => {
+         try {
+            const apiUrl = 'http://localhost:5000/colleges';
+            const response = await axios.get(apiUrl);
+            const data = response.data;
+            setColleges(data);
+         } catch (error) {
+            console.error('Error fetching data:', error);
+         }
+      };
+      fetchColleges();
+   }, []);
+
    const authInfo = {
       user,
       loading,
@@ -82,6 +104,8 @@ const AuthProvider = ({ children }) => {
       updateUserProfile,
       loginWithEmail,
       logOutUser,
+      resetPass,
+      colleges
    };
 
    return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;

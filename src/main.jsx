@@ -11,6 +11,7 @@ import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
 import AuthProvider from './Providers/AuthProvider';
 import { Toaster } from 'react-hot-toast';
+import CollegeDetails from './Pages/CollegeDetails/CollegeDetails';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/colleges/:id',
+        element: <CollegeDetails />,
+        loader: ({params}) => fetch(`http://localhost:5000/colleges/${params.id}`)
       }
     ]
   },

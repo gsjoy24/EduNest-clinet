@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from './Header';
+import CollegePreview from './CollegePreview';
+import CollegeDetails from '../CollegeDetails/CollegeDetails';
 
 const Home = () => {
    // scroll to top automatically
@@ -9,6 +11,7 @@ const Home = () => {
    return (
       <div>
          <Header />
+         <CollegePreview />
 
       </div>
    );

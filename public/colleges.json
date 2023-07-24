@@ -1,11 +1,7 @@
 [
    {
       "college_name": "University of Northville",
-      "admission_dates": {
-         "fall": "September 1 - 15",
-         "spring": "January 15 - 30",
-         "summer": "April 15 - 30"
-      },
+      "admission_date": "April 15 - 30",
       "events": [
          {
             "event_name": "Orientation Day",
@@ -42,15 +38,11 @@
          "Volleyball",
          "Track and Field"
       ],
-      "college_image": "https://example.com/university_of_northville.jpg"
+      "college_image": "https://images.unsplash.com/20/cambridge.JPG?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=847&q=80"
    },
    {
       "college_name": "Central State College",
-      "admission_dates": {
-         "fall": "August 15 - 31",
-         "spring": "January 10 - 25",
-         "summer": "May 1 - 15"
-      },
+      "admission_date": "May 1 - 15",
       "events": [
          {
             "event_name": "Welcome Back Bash",
@@ -86,6 +78,168 @@
          "Badminton",
          "Golf"
       ],
-      "college_image": "https://example.com/central_state_college.jpg"
+      "college_image": "https://images.unsplash.com/photo-1472121779802-43c68a9f405f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80"
+   },
+   {
+      "college_name": "Tech Institute of Science",
+      "admission_date": "May 10 - 25",
+      "events": [
+         {
+            "event_name": "Tech Expo",
+            "date": "October 8 - 10, 2023",
+            "location": "Tech Center",
+            "description": "Explore the latest innovations and technologies developed by our students and faculty. Open to the public."
+         },
+         {
+            "event_name": "Hackathon",
+            "date": "November 12 - 13, 2023",
+            "location": "Innovation Lab",
+            "description": "Compete in a thrilling 24-hour coding challenge. Show off your coding skills and win exciting prizes!"
+         },
+         {
+            "event_name": "Graduation Ceremony",
+            "date": "June 15, 2024",
+            "location": "Tech Arena",
+            "description": "Celebrate the achievements of our graduating class. Family and friends are invited to join this special day."
+         }
+      ],
+      "research_history": {
+         "found_date": "March 3, 1960",
+         "founder": "Dr. William Anderson",
+         "notable_discoveries": [
+            "Anderson's Law of Robotics",
+            "Tech Institute's Quantum Computing Breakthrough"
+         ]
+      },
+      "sports": [
+         "Esports",
+         "Table Tennis",
+         "Chess",
+         "Badminton",
+         "Athletics"
+      ],
+      "college_image": "https://images.unsplash.com/photo-1582481725274-d63bdf929a90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+   },
+   {
+      "college_name": "Liberty Arts University",
+      "admission_date": "April 5 - 20",
+      "events": [
+         {
+            "event_name": "Art Fair",
+            "date": "September 28 - 30, 2023",
+            "location": "Fine Arts Gallery",
+            "description": "Experience the creativity of our talented artists. View and purchase unique artworks at the art fair."
+         },
+         {
+            "event_name": "Theater Festival",
+            "date": "November 5 - 12, 2023",
+            "location": "Liberty Theater",
+            "description": "Be captivated by outstanding performances during our annual theater festival. Tickets available soon!"
+         },
+         {
+            "event_name": "International Dance Showcase",
+            "date": "March 8, 2024",
+            "location": "Dance Studio",
+            "description": "Witness a mesmerizing display of dance forms from various cultures. Get ready to be amazed!"
+         }
+      ],
+      "research_history": {
+         "found_date": "May 12, 1975",
+         "founder": "Prof. Emily Johnson",
+         "notable_discoveries": [
+            "Johnson's Theory of Abstract Expressionism",
+            "Liberty Arts' Contribution to Modern Sculpture"
+         ]
+      },
+      "sports": [
+         "Synchronized Swimming",
+         "Yoga",
+         "Fencing",
+         "Gymnastics"
+      ],
+      "college_image": "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+   },
+   {
+      "college_name": "Greenwood State University",
+      "admission_date": "May 5 - 20",
+      "events": [
+         {
+            "event_name": "Welcome Picnic",
+            "date": "September 2, 2023",
+            "location": "Greenwood Lawn",
+            "description": "Join us for a fun-filled picnic to kickstart the new academic year. Food, games, and much more!"
+         },
+         {
+            "event_name": "Cultural Diversity Week",
+            "date": "October 17 - 21, 2023",
+            "location": "Campus Amphitheater",
+            "description": "Celebrate the richness of different cultures through performances, workshops, and global cuisine."
+         },
+         {
+            "event_name": "Greenwood Marathon",
+            "date": "April 13, 2024",
+            "location": "Starting at Student Plaza",
+            "description": "Participate in the annual marathon and promote fitness and well-being on campus. All skill levels welcome!"
+         }
+      ],
+      "research_history": {
+         "found_date": "November 5, 1958",
+         "founder": "Dr. Michael Carter",
+         "notable_discoveries": [
+            "Carter's Theory of Environmental Sustainability",
+            "Greenwood State's Breakthrough in Renewable Energy"
+         ]
+      },
+      "sports": [
+         "Soccer",
+         "Basketball",
+         "Swimming",
+         "Cricket",
+         "Rugby",
+         "Field Hockey"
+      ],
+      "college_image": "https://images.unsplash.com/flagged/photo-1554473675-d0904f3cbf38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"
+   },
+   {
+      "college_name": "Harmony Music Conservatory",
+      "admission_date": {
+         "fall": "September 5 - 20",
+         "spring": "January 15 - 30",
+         "summer": "May 1 - 15"
+      },
+      "events": [
+         {
+            "event_name": "Concert Series",
+            "date": "October 8 - 12, 2023",
+            "location": "Harmony Auditorium",
+            "description": "Experience exceptional musical performances by our talented students and renowned guest artists."
+         },
+         {
+            "event_name": "Masterclass with Maestro",
+            "date": "November 20, 2023",
+            "location": "Music Hall",
+            "description": "Learn from the best! Participate in a masterclass conducted by a world-renowned music maestro."
+         },
+         {
+            "event_name": "Choir Festival",
+            "date": "March 15 - 18, 2024",
+            "location": "Chapel of Harmony",
+            "description": "Witness the magic of harmonious voices in our annual choir festival. Don't miss this enchanting event!"
+         }
+      ],
+      "research_history": {
+         "found_date": "July 30, 1982",
+         "founder": "Professor Emily Watson",
+         "notable_discoveries": [
+            "Watson's Method of Music Therapy",
+            "Harmony Conservatory's Contribution to Classical Music Revival"
+         ]
+      },
+      "sports": [
+         "Dance",
+         "Acrobatics",
+         "Yoga"
+      ],
+      "college_image": "https://images.unsplash.com/photo-1569447891824-7a1758aa73a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
    }
 ]

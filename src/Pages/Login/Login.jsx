@@ -1,15 +1,16 @@
 import { Link, useNavigate } from 'react-router-dom';
 import loginImg from '../../assets/login.jpg'
 import SocialAuth from '../../components/SocialAuth/SocialAuth';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-hot-toast';
 const Login = () => {
+   const userEmail = useRef()
    // scroll to top automatically
    useEffect(() => {
       window.scrollTo(0, 0)
    }, [])
-   const { loginWithEmail, setLoading, loading } = useContext(AuthContext)
+   const { loginWithEmail, resetPass, setLoading, loading } = useContext(AuthContext)
    const navigate = useNavigate();
 
    const handleLogin = (event) => {
@@ -28,6 +29,20 @@ const Login = () => {
             toast.error(err.message);
          });
    }
+
+   const handleResetPassword = () => {
+      if (userEmail.current.value) {
+         resetPass(userEmail.current.value).then((res) => {
+            toast.success('Check your email to reset your password!');
+         })
+            .catch((err) => {
+               console.log(err.message);
+               toast.error(err.message);
+            })
+      } else {
+         toast.error('Please enter your email address.');
+      }
+   }
    return (
       <div className='py-12 px-3 flex justify-center items-center gap-8'>
          <div className='max-w-sm hidden md:block'>
@@ -41,7 +56,7 @@ const Login = () => {
                <label className="label">
                   <span className="label-text">What is your email?</span>
                </label>
-               <input type="email" name="email" placeholder="Email" className="input input-bordered w-full" required/>
+               <input ref={userEmail} type="email" name="email" placeholder="Email" className="input input-bordered w-full" required />
             </div>
 
             {/* password */}
@@ -49,7 +64,8 @@ const Login = () => {
                <label className="label">
                   <span className="label-text">Create a new password</span>
                </label>
-               <input type="password" name='password' placeholder="Password" className="input input-bordered w-full" autoComplete='true' required/>
+               <input type="password" name='password' placeholder="Password" className="input input-bordered w-full" autoComplete='true' required />
+               <p onClick={handleResetPassword} className='text-sm p-1 cursor-pointer'>forgot password?</p>
             </div>
             <button type={loading ? 'button' : 'submit'} className="btn btn-block mt-5">{loading ? 'Please wait!' : 'Login'}</button>
             <div className='text-sm py-3 text-center'>
